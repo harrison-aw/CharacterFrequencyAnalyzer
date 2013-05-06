@@ -7,20 +7,20 @@
 
 #include <iostream>
 
-#include "FrequencyTable.h"
+#include <dirent.h>
+
+#include "FrequencyRecord.h"
 
 using namespace std;
-using namespace cfanalyzer;
+using namespace nnproject;
 
 typedef map<char, unsigned int>::iterator iter;
 
 int main(int argc, char *argv[]) {
 
-	FrequencyTable ft;
-
-	ft.analyzeFile("readme-graph.lisp.txt");
-
-	cout << ft;
+	FrequencyRecord fr;
+	fr.analyzeFile("readme-graph.lisp.txt");
+	cout << fr;
 
 	return 0;
 }

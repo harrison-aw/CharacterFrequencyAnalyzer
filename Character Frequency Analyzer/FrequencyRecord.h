@@ -12,14 +12,14 @@
 #include <map>
 #include <string>
 
-namespace cfanalyzer {
+namespace nnproject {
 
-class FrequencyTable {
+class FrequencyRecord {
 public:
-	FrequencyTable();
-	virtual ~FrequencyTable();
+	FrequencyRecord();
+	virtual ~FrequencyRecord();
 
-	friend std::ostream &operator<<(std::ostream &os, const FrequencyTable &ft);
+	friend std::ostream &operator<<(std::ostream &os, FrequencyRecord &fr);
 
 	void analyzeFile(const std::string &filename);
 
