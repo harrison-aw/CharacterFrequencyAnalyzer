@@ -24,11 +24,23 @@ FrequencyTable::~FrequencyTable() {
 }
 
 ostream &operator<<(ostream &os, FrequencyTable &ft) {
+	os << ft.table.size();
 	for (map<string,FrequencyRecord>::iterator it = ft.table.begin(); it != ft.table.end(); ++it) {
-		os << it->first << " " << it->second << endl;
+		os << " " << it->first << " " << it->second;
 	}
 
 	return os;
+}
+
+istream &operator>>(istream &is, FrequencyTable &ft) {
+	unsigned int size;
+	is >> size;
+	for (unsigned int i = 0; i < size; ++i) {
+		std::string filename;
+		is >> filename;
+		is >> ft.table[filename];
+	}
+	return is;
 }
 
 void FrequencyTable::buildFromDirectory(const string &directory_path) {

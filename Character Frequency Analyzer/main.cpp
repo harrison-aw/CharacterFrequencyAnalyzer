@@ -15,9 +15,14 @@ using namespace std;
 using namespace nnproject;
 
 int main(int argc, char *argv[]) {
-	FrequencyTable ft("Debug/files/");
 
-	cout << ft;
+	FrequencyRecord fr2;
+	cin >> fr2;
+
+
+	//FrequencyTable ft("Debug/files/");
+
+	//cout << ft;
 
 	return 0;
 }

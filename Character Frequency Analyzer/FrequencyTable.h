@@ -25,6 +25,7 @@ public:
 	virtual ~FrequencyTable();
 
 	friend std::ostream &operator<<(std::ostream &os, FrequencyTable &ft);
+	friend std::istream &operator>>(std::istream &is, FrequencyTable &ft);
 
 	void buildFromDirectory(const std::string &directory_path);
 

@@ -31,13 +31,19 @@ FrequencyRecord::~FrequencyRecord() {
 }
 
 ostream &operator<<(ostream &os, FrequencyRecord &fr) {
-	os << fr.char_count << " ";
+	os << fr.char_count;
 	for (char c = 0; c < 127; ++c) {
-		os << fr.record[c];
-		if (c < 126)
-			os << " ";
+		os << " " << fr.record[c];
 	}
 	return os;
+}
+
+istream &operator>>(istream &is, FrequencyRecord &fr) {
+	is >> fr.char_count;
+	for (char c = 0; c < 127; ++c) {
+		is >> fr.record[c];
+	}
+	return is;
 }
 
 void FrequencyRecord::analyzeFile(const string &filename) {

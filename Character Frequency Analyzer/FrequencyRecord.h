@@ -22,6 +22,7 @@ public:
 	virtual ~FrequencyRecord();
 
 	friend std::ostream &operator<<(std::ostream &os, FrequencyRecord &fr);
+	friend std::istream &operator>>(std::istream &is, FrequencyRecord &fr);
 
 	void analyzeFile(const std::string &filename);
 
