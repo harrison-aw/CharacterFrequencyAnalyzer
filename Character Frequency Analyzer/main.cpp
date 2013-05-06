@@ -9,18 +9,15 @@
 
 #include <dirent.h>
 
-#include "FrequencyRecord.h"
+#include "FrequencyTable.h"
 
 using namespace std;
 using namespace nnproject;
 
-typedef map<char, unsigned int>::iterator iter;
-
 int main(int argc, char *argv[]) {
+	FrequencyTable ft("Debug/files/");
 
-	FrequencyRecord fr;
-	fr.analyzeFile("readme-graph.lisp.txt");
-	cout << fr;
+	cout << ft;
 
 	return 0;
 }

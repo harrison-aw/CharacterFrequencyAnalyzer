@@ -5,10 +5,10 @@
  *      Author: Tony
  */
 
-#ifndef FREQUENCYTABLE_H_
-#define FREQUENCYTABLE_H_
+#ifndef FREQUENCYRECORD_H_
+#define FREQUENCYRECORD_H_
 
-#include <istream>
+#include <iostream>
 #include <map>
 #include <string>
 
@@ -17,6 +17,8 @@ namespace nnproject {
 class FrequencyRecord {
 public:
 	FrequencyRecord();
+	FrequencyRecord(const FrequencyRecord &fr);
+	explicit FrequencyRecord(const std::string &filename);
 	virtual ~FrequencyRecord();
 
 	friend std::ostream &operator<<(std::ostream &os, FrequencyRecord &fr);
@@ -28,8 +30,8 @@ public:
 
 private:
 	unsigned int char_count;
-	std::map<char, unsigned int> table;
+	std::map<char, unsigned int> record;
 };
 
 } /* namespace cfanalyzer */
-#endif /* FREQUENCYTABLE_H_ */
+#endif /* FREQUENCYRECORD_H_ */
